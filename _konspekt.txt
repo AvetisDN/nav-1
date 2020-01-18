@@ -1,0 +1,45 @@
+CSS переходы
+
+transition: [css-prop] duration easing
+
+transition: 500ms ease;
+transition: opacity .5s ease-out;
+
+easing:
+    linear
+    ease-in
+    ease-out
+    ease-in-out
+    ease
+    cubic-bezier(...)   https://cubic-bezier.com/
+
+transition-delay: delay
+
+
+CSS трансформации
+https://webref.ru/css/transform
+
+transform: вид(параметры)
+
+    scale(0 - 1)
+    scale(0 - 1, 0 - 1)
+    scaleX(0 - 1)
+    scaleY(0 - 1)
+
+    translate(..., ...)
+    translateX(...)
+    translateY(...)
+
+    rotate(...deg)
+    rotate(...rad)
+    rotateX()
+    rotateY()
+    rotateZ()
+    rotate3D(., ., .)
+
+    skew(..., ...)
+    skewX()
+    skewY()
+
+
+transform-origin

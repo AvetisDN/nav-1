@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reboot.css">
+    <link rel="stylesheet" href="css/menu2.css">
+</head>
+<body>
+    
+    <div id='burger-menu'>
+        <div class="first"></div>
+        <div class="second"></div>
+        <div class="third"></div>
+    </div>
+    <nav id="nav-drawer">
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#">Главная</a>
+            </li>
+            <li>
+                <div></div>
+                <a href="#">О нас</a>
+            </li>
+            <li>
+                <div></div>
+                <a href="#">Услуги</a>
+            </li>
+            <li>
+                <div></div>
+                <a href="#">Наши работы</a>
+            </li>
+            <li>
+                <div></div>
+                <a href="#">Партнёры</a>
+            </li>
+            <li>
+                <div></div>
+                <a href="#">Контакты</a>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+    <script>
+        
+        const burgerButton = document.querySelector('#burger-menu');
+        const navDrawer = document.querySelector('#nav-drawer');        
+
+        burgerButton.addEventListener('click', clickHandler);
+
+        function clickHandler(event) {
+            burgerButton.classList.toggle('close');
+            navDrawer.classList.toggle('opened');
+        }
+
+        $( 'body' ).swipe({
+            
+            swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+                if(direction === 'left') {
+                    burgerButton.classList.add('close');
+                    navDrawer.classList.add('opened');
+                }
+                if(direction === 'right') {
+                    burgerButton.classList.remove('close');
+                    navDrawer.classList.remove('opened');
+                }
+            }
+        });     
+
+    </script>
+
+</body>
+</html>

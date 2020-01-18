@@ -1,0 +1,74 @@
+body {
+    background-color: #f1f2f4;
+    color: #556677;
+}
+
+.header {
+    background-color: rgb(55, 137, 231);
+}
+
+.header .header__top .header__top-logo {
+    padding: 15px 15px 0;
+}
+
+.header .header__top .header__top-logo img {
+    max-height: 40px;
+}
+.header .header__menu ul {
+    font-size: 0;
+}
+.header .header__menu li {
+    display: inline-block;
+    position: relative;
+}
+.header .header__menu li a {
+    display: block;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 300ms ease;
+    white-space: nowrap;
+}
+
+.header .header__menu li:hover>a {
+    background-color: rgba(0,0,0,.15);
+}
+
+/*ВЛОЖЕННОЕ МЕНЮ*/
+.header .header__menu li>ul {
+    /* display: none; */
+    transform: perspective(500px) rotateX(-90deg);
+    transform-origin: 50% 0;
+    transition: 300ms ease;
+    background-color: rgb(55, 137, 231);
+    position: absolute;
+    min-width: 100%;
+    box-shadow: rgba(0,0,0,.2) 0 12px 15px;
+}
+.header .header__menu li>ul>li {
+    display: block;
+}
+.header .header__menu li>ul>li a {
+    font-size: 16px;
+}
+
+/*ОТОБРАЖЕНИЕ СКРЫТОГО UL*/
+.header .header__menu li:hover>ul {
+    /* display: block; */
+    transform: perspective(500px) rotateX(0deg);
+}
+
+/*3-й УРОВЕНЬ МЕНЮ*/
+.header .header__menu li>ul>li>ul {
+    left: 100%;
+    top: 0;
+    transform-origin: 0 50%;
+    transform: perspective(500px) rotateY(90deg);
+}
+.header .header__menu li>ul>li:hover>ul {
+    transform: perspective(500px) rotateY(0deg);
+}
